@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TechnoTrends/trending</title>
+<script>
+function openNav() {
+     document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+     document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+	}
+
+</script>
+
+
+<link rel="stylesheet" href="galleryview.css">
+<meta charset="utf-8">
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="formatheader.html">About</a>
+  <a href="galleryview.html">What's Trending?</a>
+  <a href="portfolio.html">All Blogs</a>
+  <a href="meetus.html">Meet our Team</a>
+  <a href="comingup.html">Waiting...</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()" onmousehover="Menu bar">&#9776</span>
+
+
+<div id="main">
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="pers-analytics.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="edge-comp.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="data-safety.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="artint.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="edge-computing.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="blockchain.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="pers-analytics.jpg" style="width:100%" onclick="currentSlide(1)" alt="Prescriptive Analytics">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="edge-comp.jpg" style="width:100%" onclick="currentSlide(2)" alt="Quantum Computing">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="data-safety.jpg" style="width:100%" onclick="currentSlide(3)" alt="Data Ownership">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="artint.jpg" style="width:100%" onclick="currentSlide(4)" alt="Artificial Intelligence">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="edge-computing.jpg" style="width:100%" onclick="currentSlide(5)" alt="Edge Computing">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="blockchain.jpg" style="width:100%" onclick="currentSlide(6)" alt="Block Chain">
+    </div>
+  </div>
+</div>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+</div>
+</body>
+</html>

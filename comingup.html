@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TechnoTrends/Waiting</title>
+<link rel="stylesheet" href="comingup.css">
+<script>
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+     document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("bgimg").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+     document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("bgimg").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+	}
+
+</script>
+
+<meta charset="utf-8">
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="formatheader.html">About</a>
+  <a href="galleryview.html">What's Trending?</a>
+  <a href="portfolio.html">All Blogs</a>
+  <a href="meetus.html">Meet our Team</a>
+  <a href="comingup.html">Waiting...</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()" onmousehover="Menu bar">&#9776</span>
+
+<div id="bgimg">
+
+  <div id="middle">
+    <h1>COMING SOON</h1>
+    <hr>
+    <p id="demo" style="font-size:30px"></p>
+  </div>
+  <div id="bottomleft">
+    <p>Powered by TechnoTrends</p>
+  </div>
+  </div>
+
+
+
+<script>
+//date to be counted
+var countDownDate = new Date("Jan 1, 2019 00:00:00").getTime();
+
+//1sec 
+var countdownfunction = setInterval(function() {
+
+
+    var now = new Date().getTime();
+   
+    var distance = countDownDate - now;
+    
+    // Time calculations 
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";/*use dom*/
+    
+    // count down is over 
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("demo").innerHTML = "AND THE WAIT IS OVER!!";
+    }
+}, 1000);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TechnoTrends
+</title>
+<link rel="stylesheet" href="portfolio.css">
+<meta charset="utf-8">
+<script>
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+     document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+     document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+	}
+
+</script>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="formatheader.html">About</a>
+  <a href="galleryview.html">What's Trending?</a>
+  <a href="portfolio.html"></a>
+  <a href="meetus.html">Meet our Team</a>
+  <a href="comingup.html">Waiting...</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span style="font-size:30px;cursor:pointer" onclick="openNav()" onmousehover="Menu bar">&#9776</span>
+
+<div id="main">
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('webD')"> Web Development</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('virtual')"> Virtual World</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column webD">
+    <div class="content">
+      <img src="fullstack.png" alt="FULLSTACK" style="width:100%">
+      <h4>Full Stack Development</h4>
+      <p>A career path that blends the front end and back end side of a website</p>
+    </div>
+  </div>
+  <div class="column webD">
+    <div class="content">
+    <img src="webD1.jpg" alt="WEB D" style="width:100%">
+      <h4>Front End Development</h4>
+      
+    </div>
+  </div>
+  <div class="column webD">
+    <div class="content">
+    <img src="webD2.jpg" alt="webd2" style="width:100%">
+      <h4>Back End Web Development</h4>
+      <p>Skills necessary for this field are Python , Django and JavaScript</p>
+    </div>
+  </div>
+  
+  <div class="column cars">
+    <div class="content">
+      <img src="c1.jpg" alt="Car" style="width:100%">
+      <h4>Retro</h4>
+      <p> How it would be if you have a car that detects Trafficand applies brakes automatically without your intervention ?
+	  Hah, life would be so easy then..</p>
+    </div>
+  </div>
+  <div class="column cars">
+    <div class="content">
+    <img src="c2.jpeg" alt="Car" style="width:100%">
+      <h4>Fast</h4>
+      <p>A brand new generation car that is fully autonomous</p>
+    </div>
+  </div>
+  <div class="column cars">
+    <div class="content">
+    <img src="c3.png" alt="Car" style="width:100%">
+      <h4>Classic</h4>
+      <p>A car with Amazon powerered Alexa features.</p>
+    </div>
+  </div>
+
+  <div class="column virtual">
+    <div class="content">
+      <img src="data-safety.jpg" alt="Car" style="width:100%">
+      <h4>Cloud Storage</h4>
+      <p>The world would be so easy to live in where all your data remains with you at all times.
+	  <br/>Isn't that amazing?</p>
+    </div>
+  </div>
+  <div class="column virtual">
+    <div class="content">
+    <img src="virtual_brains1.jpg" alt="Car" style="width:100%">
+      <h4>Machine Learning</h4>
+      <p>A world is near where machines themselvs understand every problem of human being.</p>
+    </div>
+  </div>
+  <div class="column virtual">
+    <div class="content">
+    <img src="virtual_brains2.jpeg" alt="Car" style="width:100%">
+      <h4>Artificial Intelligence</h4>
+      <p>How it would be if a machine can learn human emotions?</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+<!-- END MAIN -->
+</div>
+</div>
+
+</body>
